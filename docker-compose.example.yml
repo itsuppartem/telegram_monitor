@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  monitor:
+    image: github_name/image_name:latest
+    restart: always
+    env_file:
+      - .env_estate
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "1"
+  bot:
+    image: github_name/image_name:latest
+    restart: always
+    env_file:
+      - .env_estate
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "1"
